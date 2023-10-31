@@ -7,7 +7,7 @@ const getTask = (req, res) => {
   res.sendStatus(200);
 };
 const createTask = (req, res) => {
-  res.send("task created");
+  res.json(req.body);
   res.sendStatus(201);
 };
 const updateTask = (req, res) => {
