@@ -1,11 +1,9 @@
 const mongoose = require("mongoose");
-
-const connectionString =
-  "mongodb+srv://nikhiltiwary28022000:yUxoaMkK4BKqsS4K@cluster0.h0pfgvc.mongodb.net/task-manager?retryWrites=true&w=majority";
+require("dotenv").config();
 
 main().catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect(connectionString);
+  await mongoose.connect(process.env.MONGO_URI);
   console.log("database connected");
 }
